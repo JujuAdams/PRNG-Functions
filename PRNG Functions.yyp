@@ -14,6 +14,7 @@
     {"id":{"name":"PrngDice","path":"scripts/PrngDice/PrngDice.yy",},"order":5,},
     {"id":{"name":"PrngGenerator","path":"scripts/PrngGenerator/PrngGenerator.yy",},"order":14,},
     {"id":{"name":"PrngRandomize","path":"scripts/PrngRandomize/PrngRandomize.yy",},"order":12,},
+    {"id":{"name":"PrngWeighted","path":"scripts/PrngWeighted/PrngWeighted.yy",},"order":13,},
     {"id":{"name":"PrngChooseArray","path":"scripts/PrngChooseArray/PrngChooseArray.yy",},"order":6,},
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},"order":4,},
     {"id":{"name":"PrngChoose","path":"scripts/PrngChoose/PrngChoose.yy",},"order":4,},

@@ -73,6 +73,61 @@ function PrngGenerator() constructor
         return _sum;
     }
     
+    static Weighted = function(_weightsArray, _valuesArray = undefined)
+    {
+        var _length = array_length(_weightsArray);
+        
+        //Calculate the sum of all weights
+        var _range = 0;
+        var _i = 0;
+        repeat(_length)
+        {
+            _range += _weightsArray[_i];
+            ++_i;
+        }
+        
+        //Generate a random number somewhere inside the established range
+        var _random = Random(_range);
+        
+        //Pass back through the weights array and find out which "bucket" the random number points to
+        var _i = 0;
+        var _index = undefined;
+        repeat(_length)
+        {
+            _random -= _weightsArray[_i];
+            
+            if (_random <= 0)
+            {
+                _index = _i;
+                break;
+            }
+            
+            ++_i;
+        }
+        
+        if (_index == undefined)
+        {
+            show_debug_message("Warning! PRNG failed to choose weighted index");
+            _index = 0;
+        }
+        
+        if (_valuesArray == undefined)
+        {
+            return _index;
+        }
+        else if (not is_array(_valuesArray))
+        {
+            show_error("Value array was not an array (datatype=" + typeof(_valuesArray) + ")\n ", true);
+        }
+        
+        if (array_length(_valuesArray) != _length)
+        {
+            show_error("Array length mismatch (weights=" + string(_length) + ", values=" + string(array_length(_valuesArray)) + "\n ", true);
+        }
+        
+        return _valuesArray[_index];
+    }
+    
     static ArrayShuffle = function(_array)
     {
         var _i = array_length(_array) - 1;
