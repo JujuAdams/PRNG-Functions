@@ -61,6 +61,18 @@ function PrngGenerator() constructor
         return _array[IRandom(array_length(_array) - 1)];
     }
     
+    static Chance = function(_percent)
+    {
+        return (Random(100) <= _percent);
+    }
+    
+    static Dice = function(_number, _sides)
+    {
+        var _sum = 0;
+        repeat(_number) _sum += IRandomRange(1, _sides);
+        return _sum;
+    }
+    
     static ArrayShuffle = function(_array)
     {
         var _i = array_length(_array) - 1;
