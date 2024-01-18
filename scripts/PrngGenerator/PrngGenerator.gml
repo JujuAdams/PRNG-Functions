@@ -56,6 +56,11 @@ function PrngGenerator() constructor
         return argument[IRandom(argument_count - 1)];
     }
     
+    static ChooseArray = function(_array)
+    {
+        return _array[IRandom(array_length(_array) - 1)];
+    }
+    
     static ArrayShuffle = function(_array)
     {
         var _i = array_length(_array) - 1;
