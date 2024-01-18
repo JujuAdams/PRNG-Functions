@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "PRNG",
-    "path": "folders/PRNG.yy",
+    "name": "Convenience Functions",
+    "path": "folders/PRNG/Convenience Functions.yy",
   },
 }

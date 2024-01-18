@@ -4,7 +4,7 @@
   "name": "PRNG Functions",
   "resources": [
     {"id":{"name":"PrngRandomRange","path":"scripts/PrngRandomRange/PrngRandomRange.yy",},"order":1,},
-    {"id":{"name":"__PrngSystem","path":"scripts/__PrngSystem/__PrngSystem.yy",},"order":14,},
+    {"id":{"name":"__PrngSystem","path":"scripts/__PrngSystem/__PrngSystem.yy",},"order":15,},
     {"id":{"name":"PrngArrayShuffle","path":"scripts/PrngArrayShuffle/PrngArrayShuffle.yy",},"order":7,},
     {"id":{"name":"PrngSetSeed","path":"scripts/PrngSetSeed/PrngSetSeed.yy",},"order":10,},
     {"id":{"name":"PrngChance","path":"scripts/PrngChance/PrngChance.yy",},"order":9,},
@@ -12,7 +12,7 @@
     {"id":{"name":"PrngGetSeed","path":"scripts/PrngGetSeed/PrngGetSeed.yy",},"order":11,},
     {"id":{"name":"PrngIRandom","path":"scripts/PrngIRandom/PrngIRandom.yy",},"order":2,},
     {"id":{"name":"PrngDice","path":"scripts/PrngDice/PrngDice.yy",},"order":5,},
-    {"id":{"name":"PrngGenerator","path":"scripts/PrngGenerator/PrngGenerator.yy",},"order":13,},
+    {"id":{"name":"PrngGenerator","path":"scripts/PrngGenerator/PrngGenerator.yy",},"order":14,},
     {"id":{"name":"PrngRandomize","path":"scripts/PrngRandomize/PrngRandomize.yy",},"order":12,},
     {"id":{"name":"PrngChooseArray","path":"scripts/PrngChooseArray/PrngChooseArray.yy",},"order":6,},
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},"order":4,},
@@ -45,6 +45,7 @@
   ],
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"PRNG","folderPath":"folders/PRNG.yy","order":3,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Convenience Functions","folderPath":"folders/PRNG/Convenience Functions.yy","order":13,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},

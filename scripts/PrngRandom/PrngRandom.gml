@@ -1,5 +1,7 @@
 // Feather disable all
 
+/// @param value
+
 function PrngRandom(_value)
 {
     static _default = __PrngSystem();
