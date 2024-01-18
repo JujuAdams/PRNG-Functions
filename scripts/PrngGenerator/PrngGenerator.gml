@@ -2,7 +2,7 @@
 
 function PrngGenerator() constructor
 {
-    __state = 1;
+    __state = int64(1);
     
     static __Iterate = function()
     {
@@ -10,14 +10,14 @@ function PrngGenerator() constructor
         _state ^= _state << 13;
         _state ^= _state >> 17;
         _state ^= _state <<  5;
-        __state = _state;
+        __state = int64(_state); //I don't trust GameMaker
         
         return abs(_state) / (real(0x7FFFFFFFFFFFFFFF) + 1.0);
     }
     
     static SetSeed = function(_seed)
     {
-        __state = _seed;
+        __state = int64(_seed);
     }
     
     static GetSeed = function()
@@ -27,7 +27,8 @@ function PrngGenerator() constructor
     
     static Randomize = function()
     {
-        __state = floor(100000*(date_current_datetime() + get_timer()) + display_mouse_get_x() + display_get_width()*display_mouse_get_y());
+        //Some bullshit idk
+        __state = int64(floor(100000*(date_current_datetime() + get_timer()) + display_mouse_get_x() + display_get_width()*display_mouse_get_y()));
     }
     
     static Random = function(_value)
