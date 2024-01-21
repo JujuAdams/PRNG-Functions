@@ -143,6 +143,16 @@ function PrngGenerator() constructor
         }
     }
     
+    static RandomNormal = function(_deviation = 1, _mean = 0)
+    {
+        //Box-Muller transform from 2 uniform samples (from 0-1) to 1 normal sample
+        var _uniform1 = Random(1);
+        var _uniform2 = Random(1);
+        var _normal = sqrt(-2*ln(_uniform1))*cos(2*pi*_uniform2);
+        
+        return _mean + _deviation * _normal;
+    }
+    
     static UUID = function(_hyphenate = false)
     {
         //UUIDv4 as per https://www.cryptosys.net/pki/uuid-rfc4122.html
