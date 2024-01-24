@@ -39,3 +39,8 @@ repeat(5)
 {
     show_debug_message(PrngUUID(true));
 }
+
+repeat(20)
+{
+    show_debug_message(PrngRandomNormal());
+}
