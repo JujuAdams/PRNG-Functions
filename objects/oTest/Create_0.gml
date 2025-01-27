@@ -1,3 +1,7 @@
+var _x = 20;
+var _y = 30;
+PrngSetSeedFromString(string(_x) + "," + string(_y));
+
 repeat(10)
 {
     show_debug_message(string_format(PrngRandom(1), 0, 10));

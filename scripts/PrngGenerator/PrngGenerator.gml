@@ -20,6 +20,11 @@ function PrngGenerator() constructor
         __state = int64(_seed);
     }
     
+    static SetSeedFromString = function(_string)
+    {
+        SetSeed(ptr("0x" + string_copy(md5_string_utf8(string(_string)), 1, 8)));
+    }
+    
     static GetSeed = function()
     {
         return __state;
