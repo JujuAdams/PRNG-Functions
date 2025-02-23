@@ -158,7 +158,7 @@ function PrngGenerator() constructor
     {
         //UUIDv4 as per https://www.cryptosys.net/pki/uuid-rfc4122.html
         
-        var _UUID = md5_string_unicode(string(IRandom(0x7FFFFFFFFFFFFFFF)));
+        var _UUID = md5_string_unicode(string(IRandom(0xFFFFFFFF)) + string(IRandom(0xFFFFFFFF)) + string(IRandom(0xFFFFFFFF)) + string(IRandom(0xFFFFFFFF)));
         _UUID = string_set_byte_at(_UUID, 13, ord("4"));
         _UUID = string_set_byte_at(_UUID, 17, ord(Choose("8", "9", "a", "b")));
         
