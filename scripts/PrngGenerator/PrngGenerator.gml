@@ -10,14 +10,15 @@ function PrngGenerator() constructor
         _state ^= _state << 13;
         _state ^= _state >> 17;
         _state ^= _state <<  5;
-        __state = 0xFFFFFFFF & int64(_state); //I don't trust GameMaker
+        _state &= 0xFFFFFFFF; //Limit to 32-bit
+        __state = _state;
         
-        return (_state / (real(0xFFFFFFFF) + 1.0));
+        return (real(_state) / 4294967296);
     }
     
     static SetSeed = function(_seed)
     {
-        __state = 0xFFFFFFFF & int64(_seed);
+        __state = (0xFFFFFFFF & int64(_seed));
     }
     
     static SetSeedFromString = function(_string)
