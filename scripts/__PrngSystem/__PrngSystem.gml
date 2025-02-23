@@ -1,7 +1,7 @@
 // Feather disable all
 
-#macro __PRNG_VERSION  "1.3.0"
-#macro __PRNG_DATE     "2025-01-27"
+#macro __PRNG_VERSION  "1.4.0"
+#macro __PRNG_DATE     "2025-02-23"
 
 function __PrngSystem()
 {
