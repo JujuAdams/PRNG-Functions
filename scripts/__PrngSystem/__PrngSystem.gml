@@ -9,7 +9,7 @@ function __PrngSystem()
     if (_default != undefined) return _default;
     _default = new PrngGenerator();
     
-    show_debug_message("Welcome to PRNG by Juju Adams! This is version " + __PRNG_VERSION + " " + __PRNG_DATE);
+    show_debug_message("Welcome to PRNG by Juju Adams! This is version " + __PRNG_VERSION + ", " + __PRNG_DATE);
     
     return _default;
 }
