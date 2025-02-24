@@ -31,6 +31,12 @@ function PrngGenerator() constructor
         return __state;
     }
     
+    static GetRandomSeed = function()
+    {
+        __Iterate();
+        return __state;
+    }
+    
     static Randomize = function()
     {
         //Some bullshit idk
