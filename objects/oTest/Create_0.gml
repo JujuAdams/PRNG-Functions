@@ -48,3 +48,8 @@ repeat(20)
 {
     show_debug_message(PrngRandomNormal());
 }
+
+repeat(10)
+{
+    show_debug_message(string(ptr(PrngGetRandomSeed())));
+}
