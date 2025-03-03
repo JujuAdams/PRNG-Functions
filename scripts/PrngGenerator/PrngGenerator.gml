@@ -7,10 +7,11 @@ function PrngGenerator() constructor
     static __Iterate = function()
     {
         var _state = __state; //Slightly faster if we cache the state value locally first
-        _state ^= _state << 13;
-        _state ^= _state >> 17;
-        _state ^= _state <<  5;
-        _state &= 0xFFFFFFFF; //Limit to 32-bit
+        
+        _state  = (_state ^ (_state << 13)) & 0xFFFFFFFF; //Limit to 32 bits
+        _state ^=            _state >> 17;
+        _state  = (_state ^ (_state <<  5)) & 0xFFFFFFFF; //Limit to 32 bits
+        
         __state = _state;
         
         return (real(_state) / 4294967296);
