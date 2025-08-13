@@ -6,4 +6,4 @@
 
 &nbsp;
 
-You may also like YellowAfterlife's explaination of [pseudorandom number generators](https://yal.cc/gamemaker-custom-prngs/) and accompanying GameMaker / Haxe [source code](https://github.com/YAL-GameMaker/prng).
+You may also like YellowAfterlife's explanation of [pseudorandom number generators](https://yal.cc/gamemaker-custom-prngs/) and accompanying GameMaker / Haxe [source code](https://github.com/YAL-GameMaker/prng).
