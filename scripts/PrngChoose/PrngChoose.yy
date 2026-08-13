@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "PrngChoose",
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "Convenience Functions",
-    "path": "folders/PRNG/Convenience Functions.yy",
+  "$GMScript":"v1",
+  "%Name":"PrngChoose",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PrngChoose",
+  "parent":{
+    "name":"Convenience Functions",
+    "path":"folders/PRNG/Convenience Functions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

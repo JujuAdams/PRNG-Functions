@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__PrngSystem",
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "PRNG",
-    "path": "folders/PRNG.yy",
+  "$GMScript":"v1",
+  "%Name":"__PrngSystem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__PrngSystem",
+  "parent":{
+    "name":"PRNG",
+    "path":"folders/PRNG.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

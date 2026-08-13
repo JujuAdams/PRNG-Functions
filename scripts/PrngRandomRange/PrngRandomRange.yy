@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "PrngRandomRange",
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "Convenience Functions",
-    "path": "folders/PRNG/Convenience Functions.yy",
+  "$GMScript":"v1",
+  "%Name":"PrngRandomRange",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PrngRandomRange",
+  "parent":{
+    "name":"Convenience Functions",
+    "path":"folders/PRNG/Convenience Functions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
