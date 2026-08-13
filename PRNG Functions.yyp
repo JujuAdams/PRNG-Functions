@@ -27,6 +27,7 @@
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},},
     {"id":{"name":"rMain","path":"rooms/rMain/rMain.yy",},},
     {"id":{"name":"__PrngSystem","path":"scripts/__PrngSystem/__PrngSystem.yy",},},
+    {"id":{"name":"PrngAdjustSeedFromString","path":"scripts/PrngAdjustSeedFromString/PrngAdjustSeedFromString.yy",},},
     {"id":{"name":"PrngArrayShuffle","path":"scripts/PrngArrayShuffle/PrngArrayShuffle.yy",},},
     {"id":{"name":"PrngChance","path":"scripts/PrngChance/PrngChance.yy",},},
     {"id":{"name":"PrngChoose","path":"scripts/PrngChoose/PrngChoose.yy",},},
