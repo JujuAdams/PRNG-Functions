@@ -8,23 +8,23 @@ function PrngGenerator() constructor
     {
         var _state = __state; //Slightly faster if we cache the state value locally first
         
-        _state  = (_state ^ (_state << 13)) & 0xFFFFFFFF; //Limit to 32 bits
-        _state ^=            _state >> 17;
-        _state  = (_state ^ (_state <<  5)) & 0xFFFFFFFF; //Limit to 32 bits
+        _state ^= _state << 13;
+        _state ^= (_state >> 7) & 0x1FFF_FFFF_FFFF_FFFF; //Mask off the top bits to emulate RHS on an unsigned int
+        _state ^= _state << 17;
         
         __state = _state;
         
-        return (real(_state) / 4294967296);
+        return ((real(_state) + real(9_223_372_036_854_775_808)) / real(18_446_744_073_709_551_615));
     }
     
     static SetSeed = function(_seed)
     {
-        __state = (0xFFFFFFFF & int64(_seed));
+        __state = int64(_seed);
     }
     
     static SetSeedFromString = function(_string)
     {
-        SetSeed(ptr("0x" + string_copy(md5_string_utf8(string(_string)), 1, 8)));
+        SetSeed("0x" + string_copy(md5_string_utf8(string(_string)), 1, 16));
     }
     
     static GetSeed = function()
@@ -41,7 +41,7 @@ function PrngGenerator() constructor
     static Randomize = function()
     {
         //Some bullshit idk
-        __state = int64(floor(100000*(date_current_datetime() + get_timer()) + display_mouse_get_x() + display_get_width()*display_mouse_get_y()));
+        SetSeed(floor(100000*(date_current_datetime() + get_timer()) + display_mouse_get_x() + display_get_width()*display_mouse_get_y()));
     }
     
     static Random = function(_value)
@@ -166,7 +166,7 @@ function PrngGenerator() constructor
     {
         //UUIDv4 as per https://www.cryptosys.net/pki/uuid-rfc4122.html
         
-        var _UUID = md5_string_unicode(string(IRandom(0xFFFFFFFF)) + string(IRandom(0xFFFFFFFF)) + string(IRandom(0xFFFFFFFF)) + string(IRandom(0xFFFFFFFF)));
+        var _UUID = md5_string_unicode(string(IRandom(0xFFFF_FFFF)) + string(IRandom(0xFFFF_FFFF)) + string(IRandom(0xFFFF_FFFF)) + string(IRandom(0xFFFF_FFFF)));
         _UUID = string_set_byte_at(_UUID, 13, ord("4"));
         _UUID = string_set_byte_at(_UUID, 17, ord(Choose("8", "9", "a", "b")));
         
