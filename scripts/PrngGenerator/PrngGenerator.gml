@@ -27,6 +27,10 @@ function PrngGenerator() constructor
         SetSeed("0x" + string_copy(md5_string_utf8(string(_string)), 1, 16));
     }
     
+    static AdjustSeedFromString = function(_string){
+        SetSeedFromString(string(__state) + string_copy(md5_string_utf8(string(_string)), 1, 16));
+    }
+    
     static GetSeed = function()
     {
         return __state;
@@ -41,7 +45,7 @@ function PrngGenerator() constructor
     static Randomize = function()
     {
         //Some bullshit idk
-        SetSeed(floor(100000*(date_current_datetime() + get_timer()) + display_mouse_get_x() + display_get_width()*display_mouse_get_y()));
+        SetSeedFromString(string(floor(1_000_000_000_000*(date_current_datetime()) + get_timer()*100000 + display_mouse_get_x() + display_get_width()*display_mouse_get_y())));
     }
     
     static Random = function(_value)
