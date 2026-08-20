@@ -65,7 +65,8 @@ function PrngGenerator() constructor
     
     static IRandomRange = function(_min, _max)
     {
-        return _min + IRandom(_max - _min);
+        var _lower = min(_min, _max);
+        return _lower + IRandom(max(_min, _max) - _lower);
     }
     
     static Choose = function()
