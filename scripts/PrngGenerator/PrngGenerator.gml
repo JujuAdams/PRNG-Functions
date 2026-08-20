@@ -17,6 +17,10 @@ function PrngGenerator() constructor
         return ((real(_state) + real(9_223_372_036_854_775_808)) / real(18_446_744_073_709_551_615));
     }
     
+    /// N.B. This method sets the PRNG state directly. Seeds similar in value (e.g. `17` and `18`)
+    ///      will generate random numbers that will be close to each other for the first few iterations.
+    ///      To ensure that nearby seeds give very different values please use `.SetSeedFromString()`.
+    
     static SetSeed = function(_seed)
     {
         __state = int64(_seed);
@@ -55,7 +59,14 @@ function PrngGenerator() constructor
     
     static RandomRange = function(_min, _max)
     {
-        return _min + Random(_max - _min);
+        if (_min <= _max)
+        {
+            return _min + Random(_max - _min);
+        }
+        else
+        {
+            return _max + Random(_min - _max);
+        }
     }
     
     static IRandom = function(_value)
@@ -65,8 +76,14 @@ function PrngGenerator() constructor
     
     static IRandomRange = function(_min, _max)
     {
-        var _lower = min(_min, _max);
-        return _lower + IRandom(max(_min, _max) - _lower);
+        if (_min <= _max)
+        {
+            return _min + IRandom(_max - _min);
+        }
+        else
+        {
+            return _max + IRandom(_min - _max);
+        }
     }
     
     static Choose = function()
