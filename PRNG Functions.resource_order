@@ -1,9 +1,12 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Extensions","order":5,"path":"folders/Extensions.yy",},
+  ],
   "ResourceOrderSettings":[
     {"name":"oTest","order":4,"path":"objects/oTest/oTest.yy",},
     {"name":"rMain","order":1,"path":"rooms/rMain/rMain.yy",},
     {"name":"__PrngSystem","order":15,"path":"scripts/__PrngSystem/__PrngSystem.yy",},
+    {"name":"PrngAlbum","order":1,"path":"scripts/PrngAlbum/PrngAlbum.yy",},
     {"name":"PrngArrayShuffle","order":8,"path":"scripts/PrngArrayShuffle/PrngArrayShuffle.yy",},
     {"name":"PrngChance","order":10,"path":"scripts/PrngChance/PrngChance.yy",},
     {"name":"PrngChoose","order":5,"path":"scripts/PrngChoose/PrngChoose.yy",},
