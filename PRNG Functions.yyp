@@ -40,6 +40,7 @@
     {"id":{"name":"PrngGetSeed","path":"scripts/PrngGetSeed/PrngGetSeed.yy",},},
     {"id":{"name":"PrngIRandom","path":"scripts/PrngIRandom/PrngIRandom.yy",},},
     {"id":{"name":"PrngIRandomRange","path":"scripts/PrngIRandomRange/PrngIRandomRange.yy",},},
+    {"id":{"name":"PrngMarbleBag","path":"scripts/PrngMarbleBag/PrngMarbleBag.yy",},},
     {"id":{"name":"PrngRandom","path":"scripts/PrngRandom/PrngRandom.yy",},},
     {"id":{"name":"PrngRandomize","path":"scripts/PrngRandomize/PrngRandomize.yy",},},
     {"id":{"name":"PrngRandomNormal","path":"scripts/PrngRandomNormal/PrngRandomNormal.yy",},},
