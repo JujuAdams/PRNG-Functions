@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PrngAlbum",
   "parent":{
-    "name":"Extensions",
-    "path":"folders/Extensions.yy",
+    "name":"PRNG",
+    "path":"folders/PRNG.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
