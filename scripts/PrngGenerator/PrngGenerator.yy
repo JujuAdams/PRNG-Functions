@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"PrngGenerator",
   "parent":{
-    "name":"PRNG",
-    "path":"folders/PRNG.yy",
+    "name":"Constructors",
+    "path":"folders/PRNG/Constructors.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
