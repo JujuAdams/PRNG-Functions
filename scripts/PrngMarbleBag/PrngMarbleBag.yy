@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"PrngMarbleBag",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PrngMarbleBag",
+  "parent":{
+    "name":"Extensions",
+    "path":"folders/Extensions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
