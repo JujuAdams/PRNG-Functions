@@ -17,31 +17,31 @@ function PrngGenerator() constructor
         return ((real(_state) + real(9_223_372_036_854_775_808)) / real(18_446_744_073_709_551_615));
     }
     
-    /// N.B. This method sets the PRNG state directly. Seeds similar in value (e.g. `17` and `18`)
+    /// N.B. This method sets the PRNG state directly. Inputs similar in value (e.g. `17` and `18`)
     ///      will generate random numbers that will be close to each other for the first few iterations.
-    ///      To ensure that nearby seeds give very different values please use `.SetSeedFromString()`.
+    ///      To ensure that nearby inputs give very different values please use `.SetStateFromString()`.
     
-    static SetSeed = function(_seed)
+    static SetState = function(_state)
     {
-        __state = int64(_seed);
+        __state = int64(_state);
     }
     
-    static SetSeedFromString = function(_string)
+    static SetStateFromString = function(_string)
     {
-        SetSeed("0x" + string_copy(md5_string_utf8(string(_string)), 1, 16));
+        SetState("0x" + string_copy(md5_string_utf8(string(_string)), 1, 16));
     }
     
-    static AdjustSeedFromString = function(_string)
+    static AdjustStateFromString = function(_string)
     {
-        SetSeedFromString(string(__state) + string_copy(md5_string_utf8(string(_string)), 1, 16));
+        SetStateFromString(string(__state) + string_copy(md5_string_utf8(string(_string)), 1, 16));
     }
     
-    static GetSeed = function()
+    static GetState = function()
     {
         return __state;
     }
     
-    static GetRandomSeed = function()
+    static GetRandomState = function()
     {
         __Iterate();
         return __state;
@@ -50,7 +50,7 @@ function PrngGenerator() constructor
     static Randomize = function()
     {
         //Some bullshit idk
-        SetSeedFromString(string(floor(1_000_000_000_000*(date_current_datetime()) + get_timer()*100000 + display_mouse_get_x() + display_get_width()*display_mouse_get_y())));
+        SetStateFromString(string(floor(1_000_000_000_000*(date_current_datetime()) + get_timer()*100000 + display_mouse_get_x() + display_get_width()*display_mouse_get_y())));
     }
     
     static Random = function(_value)

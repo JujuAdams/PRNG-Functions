@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"PrngGetSeed",
+  "%Name":"PrngSetStateFromString",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"PrngGetSeed",
+  "name":"PrngSetStateFromString",
   "parent":{
     "name":"Convenience Functions",
     "path":"folders/PRNG/Convenience Functions.yy",

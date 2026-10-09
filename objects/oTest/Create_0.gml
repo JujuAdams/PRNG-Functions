@@ -1,6 +1,6 @@
 var _x = 20;
 var _y = 30;
-PrngSetSeedFromString(string(_x) + "," + string(_y));
+PrngSetStateFromString(string(_x) + "," + string(_y));
 
 repeat(10)
 {
@@ -51,7 +51,7 @@ repeat(20)
 
 repeat(10)
 {
-    show_debug_message(string(ptr(PrngGetRandomSeed())));
+    show_debug_message(string(ptr(PrngGetRandomState())));
 }
 
 var _count = room_width*room_height;

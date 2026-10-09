@@ -1,7 +1,7 @@
 // Feather disable all
 
-function PrngGetRandomSeed()
+function PrngGetRandomState()
 {
     static _default = __PrngSystem();
-    return _default.GetRandomSeed();
+    return _default.GetRandomState();
 }
