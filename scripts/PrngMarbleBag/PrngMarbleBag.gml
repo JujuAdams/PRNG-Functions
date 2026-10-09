@@ -1,10 +1,12 @@
-/// @desc Creates a "Marble Bag" rng structure. It has an array of possible "marbles", when you pull a marble from the bag, it is removed from the pool of possible options until the bag is "replenished", restoring all removed options. 
+/// Creates a "Marble Bag" rng structure. It has an array of possible "marbles", when you pull a
+/// marble from the bag, it is removed from the pool of possible options until the bag is
+/// "replenished", restoring all removed options.
+/// 
 /// @param {array} motherMarbles                   The array of possible marbles to pull from.
 /// @param {struct.PrngGenerator} [prngGenerator]  The PrngGenerator to advance whenever the marble bag needs to shuffle its content. If unspecified, uses the internal system PrngGenerator. Can be re-specified when pulling
 
-function PrngMarbleBag(_motherMarbles, _prngGenerator = __PrngSystem()) constructor{
-    
-    static __indexerFunc = function(index) { return index; }
+function PrngMarbleBag(_motherMarbles, _prngGenerator = __PrngSystem()) constructor
+{
     motherMarbles = variable_clone(_motherMarbles, 0);
     availableMarbleIndices = [];
     prngGenerator = _prngGenerator;
@@ -35,19 +37,24 @@ function PrngMarbleBag(_motherMarbles, _prngGenerator = __PrngSystem()) construc
             _index = array_shift(availableMarbleIndices);
         }
         
-        var marble = motherMarbles[_index];
+        var _marble = motherMarbles[_index];
         
         if (_replenish && (_length == 1))
         {
             ReplenishMarbles(true, _prngGenerator);
         }
         
-        return marble;
+        return _marble;
     }
     
     static ReplenishMarbles = function(_replace = true, _prngGenerator = prngGenerator)
     {
-        var _newArray =  array_create_ext(array_length(motherMarbles), __indexerFunc);
+        static _funcReturnIndex = function(_index)
+        {
+            return _index;
+        }
+        
+        var _newArray = array_create_ext(array_length(motherMarbles), _funcReturnIndex);
         if (_replace)
         {
             availableMarbleIndices = _newArray;
@@ -88,6 +95,8 @@ function PrngMarbleBag(_motherMarbles, _prngGenerator = __PrngSystem()) construc
         {
             array_delete(availableMarbleIndices, _indexIndex, 1);
         }
+        
+        return self;
     }
     
     static RemoveMarbleByIndex = function(_index)
@@ -105,9 +114,10 @@ function PrngMarbleBag(_motherMarbles, _prngGenerator = __PrngSystem()) construc
         return array_length(motherMarbles);
     }
     
-    static ChangePrngGenerator = function(_prngGenerator)
+    static ChangeGenerator = function(_prngGenerator)
     {
         prngGenerator = _prngGenerator;
+        
         return self;
     }
     
@@ -123,6 +133,7 @@ function PrngMarbleBag(_motherMarbles, _prngGenerator = __PrngSystem()) construc
         if (_importStruct[$ "motherMarbles"] == undefined) return self;
         
         motherMarbles = _importStruct.motherMarbles;
+        
         return self;
     }
     

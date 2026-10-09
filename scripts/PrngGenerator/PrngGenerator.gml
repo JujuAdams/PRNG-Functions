@@ -31,7 +31,8 @@ function PrngGenerator() constructor
         SetSeed("0x" + string_copy(md5_string_utf8(string(_string)), 1, 16));
     }
     
-    static AdjustSeedFromString = function(_string){
+    static AdjustSeedFromString = function(_string)
+    {
         SetSeedFromString(string(__state) + string_copy(md5_string_utf8(string(_string)), 1, 16));
     }
     
